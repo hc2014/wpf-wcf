@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="AdminManager.UserControls.SetParameter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Loaded="UserControl_Loaded_1">
+    <Canvas>
+        <UniformGrid Canvas.Left="0" Canvas.Top="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">工作月:</Label>
+                <TextBox Width="30" Name="txt_MonthFrom" Grid.Column="1"></TextBox>
+                <Label Grid.Column="2">→</Label>
+                <TextBox Width="30" Name="txt_MonthTo" Grid.Column="3"></TextBox>
+                <CheckBox Name="cb_WorkMonth" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">启动</CheckBox>
+            </Grid>
+            <Button Name="Sure" Width="50" Height="24" Click="Sure_Click_1">确定</Button>
+        </UniformGrid>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="AdminManager.UserControls.UserInfoList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="220"
+             Loaded="UserControl_Loaded_1">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="BorderBrush" Value="#F9F9F9"></Setter>
+                <Setter Property="IsReadOnly" Value="True"></Setter>
+                <Setter Property="Background" Value="#f9f9f9"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="190"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Name="Title_User" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="15" FontWeight="Bold">用户信息</Label>
+            <Label Name="lb_Account" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">账户:</Label>
+            <Label Name="lb_Nickname" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">昵称:</Label>
+            <Label Name="lb_Tel" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3">手机:</Label>
+            <Label Name="lb_QQ" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4">QQ:</Label>
+            <Label Name="lb_Email" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5">邮箱:</Label>
+            <Label Name="lb_GenDer" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6">性别:</Label>
+            <TextBox Name="txt_Account" Width="120" Height="30" Grid.Column="1" Grid.Row="1"></TextBox>
+            <TextBox Name="txt_NickName" Width="120" Height="30" Grid.Column="1" Grid.Row="2"></TextBox>
+            <TextBox Name="txt_Tel" Width="120" Height="30" Grid.Column="1" Grid.Row="3"></TextBox>
+            <TextBox Name="txt_QQ" Width="120" Height="30" Grid.Column="1" Grid.Row="4"></TextBox>
+            <TextBox Name="txt_Email" Width="120" Height="30" Grid.Column="1" Grid.Row="5"></TextBox>
+            <TextBox Name="txt_Gender" Width="120" Height="30" Grid.Column="1" Grid.Row="6"></TextBox>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Name="Title_Asset" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="15" FontWeight="Bold">财产信息</Label>
+            <Label Name="lb_Money" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.Row="1">金钱:</Label>
+            <Label Name="lb_Gold" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">金币:</Label>
+            <TextBox Name="txt_Money" Width="120" Height="30" Grid.Column="1" Grid.Row="1"></TextBox>
+            <TextBox Name="txt_Gold" Width="120" Height="30" Grid.Column="1" Grid.Row="2"></TextBox>
+        </Grid>
+    </Grid>
+</UserControl>

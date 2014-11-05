@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AdminManager.MainWindow"
+        Title="MainWindow" Height="350" Width="525"
+        Loaded="Window_Loaded_1">
+    <Canvas>
+        <Label x:Name="system" Content="管理系统登录" FontSize="24" FontFamily="宋体" FontWeight="Bold" Canvas.Top="20" Canvas.Left="50"/>
+        <Label x:Name="LoginLabel" Content="账号:" Canvas.Top="100" Canvas.Left="100"/>
+        <Label x:Name="PwdLabel" Content="密码:" Canvas.Top="130" Canvas.Left="100"/>
+        <TextBox x:Name="LoginText" Width="200" Canvas.Top="100" Canvas.Left="140" />
+        <PasswordBox x:Name="PwdText" Width="200"  Canvas.Top="130" Canvas.Left="140" />
+        <Button x:Name="LoginButton" IsDefault="True" Content="登录" Canvas.Left="270" Canvas.Top="180" Width="60" Click="LoginButton_Click"/>
+    </Canvas>
+</Window>

@@ -1,0 +1,12 @@
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.dll.config
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.dll
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.pdb
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.csprojResolveAssemblyReference.cache
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.dll
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.pdb
+C:\Users\hc\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.dll.config
+C:\Users\hc\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.dll
+C:\Users\hc\Desktop\AdminManager\ManagerServer\bin\Debug\ManagerServer.pdb
+C:\Users\hc\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.csprojResolveAssemblyReference.cache
+C:\Users\hc\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.dll
+C:\Users\hc\Desktop\AdminManager\ManagerServer\obj\Debug\ManagerServer.pdb

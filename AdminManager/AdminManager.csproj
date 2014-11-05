@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DC7F1ED-805F-46EB-8B17-C50ED5F41A94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminManager</RootNamespace>
+    <AssemblyName>AdminManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\K04\Desktop\发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2C3286E12E00C43856E91B04851F12AB442966A4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AdminManager_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="wpftoolkit">
+      <HintPath>d:\tddownload\datetimepickertestsolution\datetimepickercontrol\bin\debug\wpftoolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\SystemParameterBLL.cs" />
+    <Compile Include="BLL\SysLogBLL.cs" />
+    <Compile Include="BLL\SingleArgumentBLL.cs" />
+    <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\OrderBLL.cs" />
+    <Compile Include="BLL\SpreadItemBLL.cs" />
+    <Compile Include="BLL\LogisticBLL.cs" />
+    <Compile Include="BLL\AssetBLL.cs" />
+    <Compile Include="BLL\AssetLogBLL.cs" />
+    <Compile Include="BLL\SpreadLevelInfoBLL.cs" />
+    <Compile Include="BLL\TaskBLL.cs" />
+    <Compile Include="BLL\TaskLogBLL.cs" />
+    <Compile Include="BLL\WithdrawalBLL.cs" />
+    <Compile Include="BLL\UserAuthenticateBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="Component\Helper.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\SystemParameterDAL.cs" />
+    <Compile Include="DAL\SysLogDAL.cs" />
+    <Compile Include="DAL\SingleArgumentDAL.cs" />
+    <Compile Include="DAL\ProductDal.cs" />
+    <Compile Include="DAL\OrderDAL.cs" />
+    <Compile Include="DAL\SpreadItemDAL.cs" />
+    <Compile Include="DAL\LogisticDAL.cs" />
+    <Compile Include="DAL\AssetDAL.cs" />
+    <Compile Include="DAL\AssetLogDal.cs" />
+    <Compile Include="DAL\SpreadLevelInfoDAL.cs" />
+    <Compile Include="DAL\TaskDAL.cs" />
+    <Compile Include="DAL\TaskLogDAL.cs" />
+    <Compile Include="DAL\WithdrawalDAL.cs" />
+    <Compile Include="DAL\UserAuthenticateDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\EmployeeModel.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\SingleArgumentModel.cs" />
+    <Compile Include="Model\SpreadItemModel.cs" />
+    <Compile Include="Model\LogisticModel.cs" />
+    <Compile Include="Model\AssetModel.cs" />
+    <Compile Include="Model\AssetLogModel.cs" />
+    <Compile Include="Model\SystemParameterModel.cs" />
+    <Compile Include="Model\SpreadLevelInfoModel.cs" />
+    <Compile Include="Model\TaskModel.cs" />
+    <Compile Include="Model\TaskLogModel.cs" />
+    <Compile Include="Model\WithdrawalModel.cs" />
+    <Compile Include="Model\UserAuthenticateModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Report\ReportControl.xaml.cs">
+      <DependentUpon>ReportControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WcfService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Authority_List.xaml.cs">
+      <DependentUpon>Authority_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Authority_Plate.xaml.cs">
+      <DependentUpon>Authority_Plate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditOrderInfo.xaml.cs">
+      <DependentUpon>EditOrderInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrderControl.xaml.cs">
+      <DependentUpon>OrderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrderInfo.xaml.cs">
+      <DependentUpon>OrderInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PageControl.xaml.cs">
+      <DependentUpon>PageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SetParameter.xaml.cs">
+      <DependentUpon>SetParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpreadControl.xaml.cs">
+      <DependentUpon>SpreadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpreadItem.xaml.cs">
+      <DependentUpon>SpreadItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SysAuthority.xaml.cs">
+      <DependentUpon>SysAuthority.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SysLogInfo.xaml.cs">
+      <DependentUpon>SysLogInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SystemLogControl.xaml.cs">
+      <DependentUpon>SystemLogControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaskAll.xaml.cs">
+      <DependentUpon>TaskAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaskControl.xaml.cs">
+      <DependentUpon>TaskControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaskPool.xaml.cs">
+      <DependentUpon>TaskPool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserAuthorityList.xaml.cs">
+      <DependentUpon>UserAuthorityList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserInfo.xaml.cs">
+      <DependentUpon>UserInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserInfoControl.xaml.cs">
+      <DependentUpon>UserInfoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserInfoList.xaml.cs">
+      <DependentUpon>UserInfoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerifyUserAuthenticate.xaml.cs">
+      <DependentUpon>VerifyUserAuthenticate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AssetLog.xaml.cs">
+      <DependentUpon>AssetLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CreateTask.xaml.cs">
+      <DependentUpon>CreateTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditLogistic.xaml.cs">
+      <DependentUpon>EditLogistic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditSpreadItem.xaml.cs">
+      <DependentUpon>EditSpreadItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditSpreadLevelInfo.xaml.cs">
+      <DependentUpon>EditSpreadLevelInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EmployeeAuth.xaml.cs">
+      <DependentUpon>EmployeeAuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegisterEmployee.xaml.cs">
+      <DependentUpon>RegisterEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TemplateWindow.xaml.cs">
+      <DependentUpon>TemplateWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Report\ReportControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Authority_List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Authority_Plate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditOrderInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\OrderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\OrderInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SetParameter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpreadControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpreadItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SysAuthority.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SysLogInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SystemLogControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TaskAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TaskControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TaskPool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserAuthorityList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserInfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserInfoList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\VerifyUserAuthenticate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AssetLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CreateTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditLogistic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditSpreadItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditSpreadLevelInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EmployeeAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegisterEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TemplateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="AdminManager_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\WcfService\AdminManager.WcfService.AssetLog_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Asset_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Employee_GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Employee_GetUserAuthorityListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.GetSysLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Logistic_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Order_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Order_GetOrderInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Product_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.SingleArgument_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.SpreadItem_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.SpreadLevelInfo_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.StringSqlParam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.TaskLog_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Task_GetListByEmployeePageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Task_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.UserAuthenticate_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.User_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\AdminManager.WcfService.Withdrawal_GetListByPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WcfService\ManagerServer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfService\service.wsdl" />
+    <None Include="Service References\WcfService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

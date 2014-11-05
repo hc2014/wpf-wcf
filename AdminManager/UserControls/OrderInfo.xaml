@@ -1,0 +1,125 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AdminManager.UserControls" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             x:Class="AdminManager.UserControls.OrderInfo" 
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded_1">
+    <UserControl.Resources>
+        <local:DataConverter x:Key="dataConverter" />
+        <local:DateTimeConverter x:Key="datetimeconverter" />
+    </UserControl.Resources>
+    <Canvas>
+
+        <Grid  Margin="0" Canvas.Left="0" Canvas.Top="0">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="70"/>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="名称:"/>
+                <TextBox x:Name="txtname" Grid.Column="1" Grid.Row="0"/>
+                <Label Grid.Column="2" Grid.Row="0" Content="订单号"/>
+                <TextBox Name="txt_Num" Grid.Column="3" Grid.Row="0"/>
+                <Label Grid.Column="4" Grid.Row="0">状态</Label><ComboBox Height="24" Width="120"  HorizontalAlignment="Right" Name="combox" SelectedIndex="0"  Grid.Column="4" Grid.Row="0" >
+                    <ListBoxItem Content="--请选择--" Tag="-1"></ListBoxItem>
+                    <ListBoxItem Content="等待发货" Tag="0"></ListBoxItem>
+                    <ListBoxItem Content="已发货" Tag="1"></ListBoxItem>
+                    <ListBoxItem Content="取消订单" Tag="2"></ListBoxItem>
+                    <ListBoxItem Content="完成订单" Tag="3"></ListBoxItem>
+                </ComboBox>
+                <Label Grid.Column="0" Grid.Row="1" Content="时间段"/>
+                <xctk:DateTimePicker  Name="timefrom" Grid.Column="1" HorizontalAlignment="Left" Width="120" Margin="5,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                
+                <Label Grid.Column="2" Grid.Row="1" Content="到"/>
+                
+                <xctk:DateTimePicker  Name="timeto" Grid.Column="3" HorizontalAlignment="Left" Width="120" Margin="5,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="4" Grid.Row="1">
+                    <Button HorizontalAlignment="Right" Height="24" Width="50" Click="Button_Click_1" Margin="3" Content="查找"/>
+                    <Button HorizontalAlignment="Right" Name="Print" Height="24" Width="50" Margin="3" Click="Print_Click_1" Content="打印"/>
+                </StackPanel>
+               
+            </Grid>
+            <DataGrid CanUserAddRows="False" PreviewMouseDoubleClick="DataGrid1_PreviewMouseDoubleClick_1" AutoGenerateColumns="False" Grid.Column="0"  SelectionChanged="DataGrid1_SelectionChanged_1" BorderBrush="Black" BorderThickness="1" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Width="600" Margin="3" x:Name="DataGrid1"  Foreground="#FF0F0F10" HorizontalGridLinesBrush="#FF2D07FD" RowBackground="#FFF6F9C5" AlternatingRowBackground="#FF0FF90B"  VerticalAlignment="Top" Height="340">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Number}" Header="订单号"/>
+                    <DataGridTextColumn Binding="{Binding NickName}" Header="客户昵称"/>
+                    <DataGridTextColumn Binding="{Binding Account}" Header="客户账户"/>
+                    <DataGridTextColumn Binding="{Binding ProductName}" Header="产品名称"/>
+                    <DataGridTextColumn Binding="{Binding Quantity}" Header="数量"/>
+                    <DataGridTextColumn Binding="{Binding Price}" Header="价格"/>
+                    <DataGridTextColumn Binding="{Binding [Date],Converter={StaticResource datetimeconverter}}" Header="下单时间"/>
+                    <DataGridTextColumn Binding="{Binding [State], Converter={StaticResource dataConverter}}" Header="状态"/>
+                    <DataGridTemplateColumn Header="操作" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                <Button Width="50" Margin="5 1" Height="24" Tag="{Binding ID}" Click="Button_Click_2">查看</Button>
+                                <Button Width="55" Margin="5 1" Height="24" Tag="{Binding ID}" Click="Button_Click_3">创建任务</Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <Border Margin="5" Padding="5" BorderBrush="SteelBlue" BorderThickness="2" CornerRadius="2">
+                            <TextBlock Width="100" Height="50" Text="{Binding Remark}" TextWrapping="Wrap"></TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+            <StackPanel Grid.Column="0" Grid.Row="2" x:Name="bottom" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid Canvas.Left="630" Canvas.Top="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+            </Grid.ColumnDefinitions>
+            <Grid Height="300" Name="right">
+                
+            </Grid>
+            <!--<Grid Grid.Column="0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Name="Title_User" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="15" FontWeight="Bold">物流信息</Label>
+                <Label Name="lb_Account" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">地址:</Label>
+                <Label Name="lb_Nickname" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">电话:</Label>
+                <Label Name="lb_Tel" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3">手机:</Label>
+                <TextBlock TextWrapping="Wrap" Name="Logistic_Address" Width="120" Height="80" Grid.Column="1" Grid.Row="1"></TextBlock>
+                <TextBlock Name="Logistic_Mobile" Width="120" Height="30" Grid.Column="1" Grid.Row="2"></TextBlock>
+                <TextBlock Name="Logistic_Tel" Width="120" Height="30" Grid.Column="1" Grid.Row="3"></TextBlock>
+            </Grid>-->
+        </Grid>
+    </Canvas>
+</UserControl>

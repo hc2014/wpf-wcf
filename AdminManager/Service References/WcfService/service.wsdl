@@ -1,0 +1,1750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Employee" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ManagerServer" />
+      <xsd:import />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmployee_Task_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_TaskLog_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaskLog_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetUserAuthorityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetUserAuthorityList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetUserAuthorityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetUserAuthorityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_Exists" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_getParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:getParams" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_getParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Employee_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Employee_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetListByWhere_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetListByWhere" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetListByWhere_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetListByWhereResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetSmallList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetSmallList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetSmallList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetSmallListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SystemParameter_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemParameter_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_GetSysLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysLog" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_GetSysLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SetSysLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSysLog" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SetSysLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSysLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SetSingleArgument_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSingleArgument" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SetSingleArgument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSingleArgumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SingleArgument_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SingleArgument_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SingleArgument_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SingleArgument_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Withdrawal_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_Exists" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Product_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Product_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetListInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetListInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetListInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetListInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_Exists" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetOrderInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_GetOrderInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_GetOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Order_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Order_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Order_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_Exists" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_DeleteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_DeleteList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_DeleteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_DeleteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadItem_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadItem_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_SpreadLevelInfo_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpreadLevelInfo_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_DeleteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_DeleteList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_DeleteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_DeleteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_User_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_DeleteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_DeleteList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_DeleteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_DeleteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetProvinceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetProvinceList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetProvinceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetProvinceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetCityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetCityList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetCityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetCityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetBoroughList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetBoroughList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_GetBoroughList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_GetBoroughListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_Add" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Logistic_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logistic_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_DeleteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_DeleteList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_DeleteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_DeleteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_UserAuthenticate_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAuthenticate_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Asset_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Asset_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_Exists" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_AssetLog_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssetLog_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_Update" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByEmployeePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByEmployeePage" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetListByEmployeePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetListByEmployeePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IEmployee_Task_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Task_GetModelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmployee">
+    <wsdl:operation name="Task_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_Add" message="tns:IEmployee_Task_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_AddResponse" message="tns:IEmployee_Task_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/TaskLog_Update" message="tns:IEmployee_TaskLog_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/TaskLog_UpdateResponse" message="tns:IEmployee_TaskLog_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetListByPage" message="tns:IEmployee_TaskLog_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetListByPageResponse" message="tns:IEmployee_TaskLog_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetList" message="tns:IEmployee_TaskLog_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetListResponse" message="tns:IEmployee_TaskLog_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetModel" message="tns:IEmployee_TaskLog_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/TaskLog_GetModelResponse" message="tns:IEmployee_TaskLog_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/TaskLog_Add" message="tns:IEmployee_TaskLog_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/TaskLog_AddResponse" message="tns:IEmployee_TaskLog_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_GetList" message="tns:IEmployee_Employee_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_GetListResponse" message="tns:IEmployee_Employee_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_GetUserInfo" message="tns:IEmployee_Employee_GetUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_GetUserInfoResponse" message="tns:IEmployee_Employee_GetUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetUserAuthorityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_GetUserAuthorityList" message="tns:IEmployee_Employee_GetUserAuthorityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_GetUserAuthorityListResponse" message="tns:IEmployee_Employee_GetUserAuthorityList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_Add" message="tns:IEmployee_Employee_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_AddResponse" message="tns:IEmployee_Employee_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_Update" message="tns:IEmployee_Employee_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_UpdateResponse" message="tns:IEmployee_Employee_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_Exists" message="tns:IEmployee_Employee_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_ExistsResponse" message="tns:IEmployee_Employee_Exists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/getParams" message="tns:IEmployee_getParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/getParamsResponse" message="tns:IEmployee_getParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Employee_GetModel" message="tns:IEmployee_Employee_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Employee_GetModelResponse" message="tns:IEmployee_Employee_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetList" message="tns:IEmployee_SystemParameter_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetListResponse" message="tns:IEmployee_SystemParameter_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_Update" message="tns:IEmployee_SystemParameter_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_UpdateResponse" message="tns:IEmployee_SystemParameter_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetListByWhere">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetListByWhere" message="tns:IEmployee_SystemParameter_GetListByWhere_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetListByWhereResponse" message="tns:IEmployee_SystemParameter_GetListByWhere_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetSmallList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetSmallList" message="tns:IEmployee_SystemParameter_GetSmallList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetSmallListResponse" message="tns:IEmployee_SystemParameter_GetSmallList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetModel" message="tns:IEmployee_SystemParameter_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SystemParameter_GetModelResponse" message="tns:IEmployee_SystemParameter_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Login" message="tns:IEmployee_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/LoginResponse" message="tns:IEmployee_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/GetSysLog" message="tns:IEmployee_GetSysLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/GetSysLogResponse" message="tns:IEmployee_GetSysLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSysLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SetSysLog" message="tns:IEmployee_SetSysLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SetSysLogResponse" message="tns:IEmployee_SetSysLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSingleArgument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SetSingleArgument" message="tns:IEmployee_SetSingleArgument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SetSingleArgumentResponse" message="tns:IEmployee_SetSingleArgument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SingleArgument_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SingleArgument_GetListByPage" message="tns:IEmployee_SingleArgument_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SingleArgument_GetListByPageResponse" message="tns:IEmployee_SingleArgument_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_Update" message="tns:IEmployee_Withdrawal_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_UpdateResponse" message="tns:IEmployee_Withdrawal_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetListByPage" message="tns:IEmployee_Withdrawal_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetListByPageResponse" message="tns:IEmployee_Withdrawal_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetList" message="tns:IEmployee_Withdrawal_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetListResponse" message="tns:IEmployee_Withdrawal_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetModel" message="tns:IEmployee_Withdrawal_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Withdrawal_GetModelResponse" message="tns:IEmployee_Withdrawal_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_Add" message="tns:IEmployee_Product_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_AddResponse" message="tns:IEmployee_Product_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_Update" message="tns:IEmployee_Product_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_UpdateResponse" message="tns:IEmployee_Product_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_Delete" message="tns:IEmployee_Product_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_DeleteResponse" message="tns:IEmployee_Product_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_Exists" message="tns:IEmployee_Product_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_ExistsResponse" message="tns:IEmployee_Product_Exists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_GetModel" message="tns:IEmployee_Product_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_GetModelResponse" message="tns:IEmployee_Product_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_GetListByPage" message="tns:IEmployee_Product_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_GetListByPageResponse" message="tns:IEmployee_Product_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Product_GetList" message="tns:IEmployee_Product_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Product_GetListResponse" message="tns:IEmployee_Product_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_GetList" message="tns:IEmployee_Order_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_GetListResponse" message="tns:IEmployee_Order_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetListInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_GetListInfo" message="tns:IEmployee_Order_GetListInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_GetListInfoResponse" message="tns:IEmployee_Order_GetListInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_Exists" message="tns:IEmployee_Order_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_ExistsResponse" message="tns:IEmployee_Order_Exists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_Add" message="tns:IEmployee_Order_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_AddResponse" message="tns:IEmployee_Order_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_Delete" message="tns:IEmployee_Order_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_DeleteResponse" message="tns:IEmployee_Order_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_GetListByPage" message="tns:IEmployee_Order_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_GetListByPageResponse" message="tns:IEmployee_Order_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetOrderInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_GetOrderInfo" message="tns:IEmployee_Order_GetOrderInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_GetOrderInfoResponse" message="tns:IEmployee_Order_GetOrderInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Order_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Order_Update" message="tns:IEmployee_Order_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Order_UpdateResponse" message="tns:IEmployee_Order_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_Exists" message="tns:IEmployee_SpreadItem_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_ExistsResponse" message="tns:IEmployee_SpreadItem_Exists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_Add" message="tns:IEmployee_SpreadItem_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_AddResponse" message="tns:IEmployee_SpreadItem_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_Delete" message="tns:IEmployee_SpreadItem_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_DeleteResponse" message="tns:IEmployee_SpreadItem_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_DeleteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_DeleteList" message="tns:IEmployee_SpreadItem_DeleteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_DeleteListResponse" message="tns:IEmployee_SpreadItem_DeleteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_GetListByPage" message="tns:IEmployee_SpreadItem_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_GetListByPageResponse" message="tns:IEmployee_SpreadItem_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_Update" message="tns:IEmployee_SpreadItem_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_UpdateResponse" message="tns:IEmployee_SpreadItem_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_GetModel" message="tns:IEmployee_SpreadItem_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadItem_GetModelResponse" message="tns:IEmployee_SpreadItem_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_Add" message="tns:IEmployee_SpreadLevelInfo_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_AddResponse" message="tns:IEmployee_SpreadLevelInfo_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetListByPage" message="tns:IEmployee_SpreadLevelInfo_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetListByPageResponse" message="tns:IEmployee_SpreadLevelInfo_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_Update" message="tns:IEmployee_SpreadLevelInfo_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_UpdateResponse" message="tns:IEmployee_SpreadLevelInfo_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetModel" message="tns:IEmployee_SpreadLevelInfo_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetModelResponse" message="tns:IEmployee_SpreadLevelInfo_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetList" message="tns:IEmployee_SpreadLevelInfo_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/SpreadLevelInfo_GetListResponse" message="tns:IEmployee_SpreadLevelInfo_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_Delete" message="tns:IEmployee_User_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_DeleteResponse" message="tns:IEmployee_User_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_DeleteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_DeleteList" message="tns:IEmployee_User_DeleteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_DeleteListResponse" message="tns:IEmployee_User_DeleteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_GetListByPage" message="tns:IEmployee_User_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_GetListByPageResponse" message="tns:IEmployee_User_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_Update" message="tns:IEmployee_User_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_UpdateResponse" message="tns:IEmployee_User_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_GetList" message="tns:IEmployee_User_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_GetListResponse" message="tns:IEmployee_User_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/User_GetModel" message="tns:IEmployee_User_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/User_GetModelResponse" message="tns:IEmployee_User_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_Delete" message="tns:IEmployee_Logistic_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_DeleteResponse" message="tns:IEmployee_Logistic_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_DeleteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_DeleteList" message="tns:IEmployee_Logistic_DeleteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_DeleteListResponse" message="tns:IEmployee_Logistic_DeleteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetListByPage" message="tns:IEmployee_Logistic_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetListByPageResponse" message="tns:IEmployee_Logistic_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_Update" message="tns:IEmployee_Logistic_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_UpdateResponse" message="tns:IEmployee_Logistic_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetList" message="tns:IEmployee_Logistic_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetListResponse" message="tns:IEmployee_Logistic_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetModel" message="tns:IEmployee_Logistic_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetModelResponse" message="tns:IEmployee_Logistic_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetProvinceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetProvinceList" message="tns:IEmployee_Logistic_GetProvinceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetProvinceListResponse" message="tns:IEmployee_Logistic_GetProvinceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetCityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetCityList" message="tns:IEmployee_Logistic_GetCityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetCityListResponse" message="tns:IEmployee_Logistic_GetCityList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetBoroughList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetBoroughList" message="tns:IEmployee_Logistic_GetBoroughList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_GetBoroughListResponse" message="tns:IEmployee_Logistic_GetBoroughList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Logistic_Add" message="tns:IEmployee_Logistic_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Logistic_AddResponse" message="tns:IEmployee_Logistic_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_Delete" message="tns:IEmployee_UserAuthenticate_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_DeleteResponse" message="tns:IEmployee_UserAuthenticate_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_DeleteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_DeleteList" message="tns:IEmployee_UserAuthenticate_DeleteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_DeleteListResponse" message="tns:IEmployee_UserAuthenticate_DeleteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetListByPage" message="tns:IEmployee_UserAuthenticate_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetListByPageResponse" message="tns:IEmployee_UserAuthenticate_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_Update" message="tns:IEmployee_UserAuthenticate_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_UpdateResponse" message="tns:IEmployee_UserAuthenticate_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetList" message="tns:IEmployee_UserAuthenticate_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetListResponse" message="tns:IEmployee_UserAuthenticate_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetModel" message="tns:IEmployee_UserAuthenticate_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/UserAuthenticate_GetModelResponse" message="tns:IEmployee_UserAuthenticate_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Asset_GetListByPage" message="tns:IEmployee_Asset_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Asset_GetListByPageResponse" message="tns:IEmployee_Asset_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Asset_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Asset_Update" message="tns:IEmployee_Asset_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Asset_UpdateResponse" message="tns:IEmployee_Asset_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Asset_GetList" message="tns:IEmployee_Asset_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Asset_GetListResponse" message="tns:IEmployee_Asset_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Asset_GetModel" message="tns:IEmployee_Asset_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Asset_GetModelResponse" message="tns:IEmployee_Asset_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/AssetLog_Exists" message="tns:IEmployee_AssetLog_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/AssetLog_ExistsResponse" message="tns:IEmployee_AssetLog_Exists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetListByPage" message="tns:IEmployee_AssetLog_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetListByPageResponse" message="tns:IEmployee_AssetLog_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetList" message="tns:IEmployee_AssetLog_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetListResponse" message="tns:IEmployee_AssetLog_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetModel" message="tns:IEmployee_AssetLog_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/AssetLog_GetModelResponse" message="tns:IEmployee_AssetLog_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_Update" message="tns:IEmployee_Task_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_UpdateResponse" message="tns:IEmployee_Task_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByPage" message="tns:IEmployee_Task_GetListByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByPageResponse" message="tns:IEmployee_Task_GetListByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_GetList" message="tns:IEmployee_Task_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_GetListResponse" message="tns:IEmployee_Task_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByEmployee" message="tns:IEmployee_Task_GetListByEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByEmployeeResponse" message="tns:IEmployee_Task_GetListByEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByEmployeePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByEmployeePage" message="tns:IEmployee_Task_GetListByEmployeePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_GetListByEmployeePageResponse" message="tns:IEmployee_Task_GetListByEmployeePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployee/Task_GetModel" message="tns:IEmployee_Task_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployee/Task_GetModelResponse" message="tns:IEmployee_Task_GetModel_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEmployee" type="tns:IEmployee">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Task_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/TaskLog_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/TaskLog_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/TaskLog_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/TaskLog_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaskLog_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/TaskLog_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetUserAuthorityList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_GetUserAuthorityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_Exists">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getParams">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/getParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Employee_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Employee_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SystemParameter_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SystemParameter_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetListByWhere">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SystemParameter_GetListByWhere" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetSmallList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SystemParameter_GetSmallList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemParameter_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SystemParameter_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysLog">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/GetSysLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSysLog">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SetSysLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSingleArgument">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SetSingleArgument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SingleArgument_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SingleArgument_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Withdrawal_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Withdrawal_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Withdrawal_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Withdrawal_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_Exists">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Product_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Product_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetListInfo">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_GetListInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_Exists">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_GetOrderInfo">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_GetOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Order_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Exists">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_DeleteList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_DeleteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadItem_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadItem_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadLevelInfo_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadLevelInfo_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadLevelInfo_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadLevelInfo_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpreadLevelInfo_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/SpreadLevelInfo_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_DeleteList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_DeleteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/User_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_DeleteList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_DeleteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetProvinceList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetProvinceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetCityList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetCityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_GetBoroughList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_GetBoroughList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logistic_Add">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Logistic_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_Delete">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_DeleteList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_DeleteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthenticate_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/UserAuthenticate_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Asset_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Asset_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Asset_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Asset_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Asset_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Asset_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_Exists">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/AssetLog_Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/AssetLog_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/AssetLog_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssetLog_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/AssetLog_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_Update">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByPage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_GetListByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetList">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByEmployee">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_GetListByEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetListByEmployeePage">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_GetListByEmployeePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Task_GetModel">
+      <soap:operation soapAction="http://tempuri.org/IEmployee/Task_GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Employee">
+    <wsdl:port name="BasicHttpBinding_IEmployee" binding="tns:BasicHttpBinding_IEmployee">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ManagerServer/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

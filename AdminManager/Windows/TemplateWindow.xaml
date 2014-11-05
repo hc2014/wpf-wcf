@@ -1,0 +1,9 @@
+﻿<Window x:Class="AdminManager.Windows.TemplateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="模板" Height="300" Width="300" Loaded="Window_Loaded_1"
+        ResizeMode="NoResize">
+    <Grid>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\K04\Desktop\发布2\">
+    <file relUrl="ManagerServer.Employee.svc" publishTime="04/25/2013 18:43:32" />
+    <file relUrl="bin/ManagerServer.dll.config" publishTime="04/25/2013 18:43:16" />
+    <file relUrl="bin/ManagerServer.pdb" publishTime="04/25/2013 17:49:49" />
+    <file relUrl="Web.config" publishTime="04/25/2013 18:43:16" />
+    <file relUrl="bin/ManagerServer.dll" publishTime="04/25/2013 17:49:49" />
+  </publishTarget>
+</publishData>

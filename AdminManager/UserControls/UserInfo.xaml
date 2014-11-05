@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="AdminManager.UserControls.UserInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AdminManager.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="850"
+             Loaded="UserControl_Loaded_1">
+    <UserControl.Resources>
+        <local:DataConverter_UserType x:Key="DataConverter_UserType" />
+        <local:DataConverter_UserState x:Key="DataConverter_UserState" />
+        <local:DateTimeConverter x:Key="datetimeconverter" />
+    </UserControl.Resources>
+    <Canvas>
+        <Grid Margin="0" Canvas.Left="0" Canvas.Top="0">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="70"></RowDefinition>
+                <RowDefinition Height="350"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0">名称:</Label>
+                <TextBox Name="txtname" Grid.Column="1" Grid.Row="0"></TextBox>
+                <Label Grid.Column="2" Grid.Row="0">编号</Label>
+                <TextBox Name="txt_Num" Grid.Column="3" Grid.Row="0"></TextBox>
+                <Label Grid.Column="0" Grid.Row="1">时间段</Label>
+                <!--<TextBox Grid.Column="1" Grid.Row="1"></TextBox>-->
+                <DatePicker Name="timefrom" Margin="3" Grid.Column="1" Grid.Row="1" />
+                <Label Grid.Column="2" Grid.Row="1">到</Label>
+                <DatePicker Name="timeto" Margin="3" Grid.Column="3" Grid.Row="1" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="1">
+                    <Button HorizontalAlignment="Right" Click="Button_Click_1" Width="60" Height="25">查找</Button>
+                </StackPanel>
+            </Grid>
+            <DataGrid AutoGenerateColumns="False" PreviewMouseDoubleClick="DataGrid1_PreviewMouseDoubleClick_1" SelectionChanged="DataGrid1_SelectionChanged_1"  IsReadOnly="True" CanUserAddRows="False"  Grid.Column="0"  BorderBrush="Black" BorderThickness="1" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Width="600" Margin="3" Name="DataGrid1"   Foreground="#FF0F0F10" HorizontalGridLinesBrush="#FF2D07FD" RowBackground="#FFF6F9C5" AlternatingRowBackground="#FF0FF90B"  VerticalAlignment="Top" Height="340">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Account}" Header="用户名"/>
+                    <DataGridTextColumn Binding="{Binding Number}" Header="编号"/>
+                    <DataGridTextColumn Binding="{Binding Email}" Header="邮箱"/>
+                    <DataGridTextColumn Binding="{Binding NickName}" Header="昵称"/>
+                    <DataGridTextColumn Binding="{Binding QQ}" Header="QQ"/>
+                    <DataGridTextColumn Binding="{Binding RegieterDate,Converter={StaticResource datetimeconverter}}" Header="注册时间"/>
+                    <DataGridTextColumn Binding="{Binding [IP]}" Header="注册IP"/>
+                    <!--<DataGridTextColumn Binding="{Binding Birthday}" Header="生日"/>-->
+                    <DataGridTextColumn Binding="{Binding [State], Converter={StaticResource DataConverter_UserState}}" Header="状态"/>
+                    <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
+                    <DataGridTemplateColumn >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btn" Tag="{Binding ID}" Content="成为员工" Click="btn_Click_1"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Column="0" Grid.Row="2" Name="bottom" HorizontalAlignment="Right">
+            </StackPanel>
+        </Grid>
+        <Grid Canvas.Top="0" Canvas.Left="615">
+            <Grid.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                    <Setter Property="BorderBrush" Value="#F9F9F9"></Setter>
+                    <Setter Property="IsReadOnly" Value="True"></Setter>
+                    <Setter Property="Background" Value="#f9f9f9"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="170"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Name="Title_Asset" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="15" FontWeight="Bold">财产信息</Label>
+                <Label Name="lb_Money" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.Row="1">金钱:</Label>
+                <Label Name="lb_Gold" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">金币:</Label>
+                <TextBox Name="txt_Money" Width="120" Height="24" Grid.Column="1" Grid.Row="1"></TextBox>
+                <TextBox Name="txt_Gold" Width="120" Height="24" Grid.Column="1" Grid.Row="2"></TextBox>
+            </Grid>
+        </Grid>
+    </Canvas>
+</UserControl>

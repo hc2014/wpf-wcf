@@ -1,0 +1,6 @@
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Release\ManagerServer.dll.config
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Release\ManagerServer.dll
+C:\Users\K04\Desktop\AdminManager\ManagerServer\bin\Release\ManagerServer.pdb
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Release\ManagerServer.dll
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Release\ManagerServer.pdb
+C:\Users\K04\Desktop\AdminManager\ManagerServer\obj\Release\ManagerServer.csprojResolveAssemblyReference.cache
